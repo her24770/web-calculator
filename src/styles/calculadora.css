@@ -1,0 +1,169 @@
+.calculadora {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(20, 27, 44, 0.45);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(77, 67, 84, 0.35);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+.pantalla {
+  background: var(--bg-lowest);
+  border: 1px solid rgba(77, 67, 84, 0.2);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pantalla::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(221, 183, 255, 0.07), transparent);
+  pointer-events: none;
+}
+
+.pantalla__expresion {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: rgba(207, 194, 214, 0.55);
+  min-height: 20px;
+  margin-bottom: 8px;
+}
+
+.pantalla__valor {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+  line-height: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.pantalla__valor--error {
+  color: var(--error);
+  font-size: 36px;
+}
+
+.teclado {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  height: 62px;
+  border: none;
+  border-radius: var(--radius);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 130ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.btn:active {
+  transform: scale(0.94);
+}
+
+.btn--numero {
+  background: var(--bg-low);
+  color: var(--on-surface);
+}
+
+.btn--numero:hover {
+  background: var(--bg-high);
+}
+
+.btn--doble {
+  grid-column: span 2;
+}
+
+.btn--especial {
+  background: rgba(46, 52, 71, 0.5);
+  color: var(--on-surface);
+}
+
+.btn--especial:hover {
+  background: rgba(46, 52, 71, 0.8);
+}
+
+.btn--limpiar {
+  background: rgba(46, 52, 71, 0.5);
+  color: var(--error);
+}
+
+.btn--limpiar:hover {
+  background: rgba(255, 180, 171, 0.12);
+}
+
+.btn--operador {
+  background: rgba(183, 109, 255, 0.18);
+  border: 1px solid rgba(221, 183, 255, 0.28);
+  color: var(--primary);
+}
+
+.btn--operador:hover {
+  background: rgba(183, 109, 255, 0.32);
+}
+
+.btn--operador-activo {
+  background: rgba(183, 109, 255, 0.38);
+  box-shadow: 0 0 14px rgba(221, 183, 255, 0.28);
+}
+
+.btn--igual {
+  background: var(--primary);
+  color: var(--on-primary);
+  font-weight: 700;
+  box-shadow: 0 0 18px rgba(221, 183, 255, 0.35);
+}
+
+.btn--igual:hover {
+  box-shadow: 0 0 28px rgba(221, 183, 255, 0.55);
+}
+
+.calc-footer {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(77, 67, 84, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(207, 194, 214, 0.25);
+}
+
+@media (max-width: 768px) {
+  .calculadora { padding: 20px; max-width: 100%; }
+  .pantalla { min-height: 110px; padding: 16px 20px; }
+  .pantalla__valor { font-size: 44px; }
+  .btn { height: 56px; font-size: 18px; }
+  .teclado { gap: 8px; }
+}
