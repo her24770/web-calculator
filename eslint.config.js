@@ -23,7 +23,7 @@ export default defineConfig([globalIgnores(['dist']), {
     semi: ['error', 'never'],
     'max-len': ['error', { code: 120 }],
     quotes: ['error', 'single'],
-    indent: ['error', 2],
+    indent: ['error', 2, { SwitchCase: 1 }],
     'comma-dangle': ['error', 'always-multiline'],
     'space-before-function-paren': ['error', { anonymous: 'always', named: 'never', asyncArrow: 'always' }],
     'no-trailing-spaces': 'error',

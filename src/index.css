@@ -3,3 +3,32 @@
   margin: 0;
   padding: 0;
 }
+
+:root {
+  --bg: #0c1324;
+  --bg-lowest: #070e1e;
+  --bg-low: #141b2c;
+  --bg-container: #181f31;
+  --bg-high: #232a3c;
+  --bg-highest: #2e3447;
+  --primary: #ddb7ff;
+  --primary-container: #b76dff;
+  --on-primary: #490080;
+  --on-surface: #dce2fa;
+  --on-surface-muted: #cfc2d6;
+  --error: #ffb4ab;
+  --outline: #4d4354;
+  --radius: 8px;
+  --radius-lg: 12px;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--on-surface);
+  font-family: 'Space Grotesk', sans-serif;
+  overflow: hidden;
+}
