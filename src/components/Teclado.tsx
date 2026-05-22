@@ -12,6 +12,7 @@ interface Props { acciones: AccionesCalc; estado: EstadoCalc }
 
 export function Teclado({ acciones, estado }: Props) {
   const boton = (v: string) => {
+    //vliacion por cada tipo de boton, se asigna un componente diferente segun el caso
     if (v === '.') return <BotonDecimal key="." onClick={acciones.ingresarDecimal} />
     if (v === '+/-') return <BotonSigno key="+/-" onClick={acciones.cambiarSigno} />
     if (v === 'AC') return <BotonLimpiar key="AC" onClick={acciones.limpiar} tieneEntrada={estado.tieneEntrada} />
@@ -19,6 +20,7 @@ export function Teclado({ acciones, estado }: Props) {
     if (v === '%') return (
       <button key="%" className="btn btn--especial" onClick={() => acciones.ingresarOperador('%')}>%</button>
     )
+    //caso especial para los operadores, se asigna un componente diferente segun el caso, ademas se le asigna una clase de activo si el operador es el mismo que el del estado
     if (OPS.has(v)) {
       const op = v as Operador
       return (
