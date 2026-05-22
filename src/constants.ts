@@ -1,8 +1,8 @@
-export const MAX_DISPLAY_LENGTH = 9
-export const MAX_VALUE = 999_999_999
+export const MAX_LONGITUD_PANTALLA = 9
+export const MAX_VALOR = 999_999_999
 
-//botones lista
-export const BUTTON_LAYOUT = [
+// lista de botones
+export const LAYOUT_BOTONES = [
   ['AC', '+/-', '%', '/'],
   ['7', '8', '9', '*'],
   ['4', '5', '6', '-'],
@@ -10,4 +10,4 @@ export const BUTTON_LAYOUT = [
   ['0', '.', '='],
 ] as const
 
-export type ButtonValue = typeof BUTTON_LAYOUT[number][number]
+export type ValorBoton = typeof LAYOUT_BOTONES[number][number]

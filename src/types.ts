@@ -1,25 +1,28 @@
-export type Operator = '+' | '-' | '*' | '/' | '%'
+export type Operador = '+' | '-' | '*' | '/' | '%'
 
-export interface HistoryEntry {
-  expression: string
-  result: string
-  timestamp: number
+// tipo por entrada en historial
+export interface EntradaHistorial {
+  expresion: string
+  resultado: string
+  marca: number
 }
 
-export interface CalcState {
-  display: string
-  operand: number | null
-  operator: Operator | null
-  waitingForOperand: boolean
-  history: HistoryEntry[]
-  hasInput: boolean
+// tipo por estado de la calculadora al presionar cada boton
+export interface EstadoCalc {
+  pantalla: string
+  operando: number | null
+  operador: Operador | null
+  esperandoOperando: boolean
+  historial: EntradaHistorial[]
+  tieneEntrada: boolean
 }
 
-export interface CalcActions {
-  inputDigit: (digit: string) => void
-  inputOperator: (op: Operator) => void
-  inputDecimal: () => void
-  toggleSign: () => void
-  calculate: () => void
-  clear: () => void
+// tipo por acciones de la calculadora
+export interface AccionesCalc {
+  ingresarDigito: (digito: string) => void
+  ingresarOperador: (op: Operador) => void
+  ingresarDecimal: () => void
+  cambiarSigno: () => void
+  calcular: () => void
+  limpiar: () => void
 }
