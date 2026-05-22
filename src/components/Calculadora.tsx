@@ -10,11 +10,6 @@ export function Calculadora({ estado, acciones }: Props) {
     <div className="calculadora">
       <Pantalla estado={estado} />
       <Teclado estado={estado} acciones={acciones} />
-      <div className="calc-footer">
-        <span>WEB</span>
-        <span>UVG</span>
-        <span>NANDEZ</span>
-      </div>
     </div>
   )
 }
