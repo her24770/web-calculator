@@ -1,16 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { action } from '@storybook/test'
 import { Teclado } from '../components/Teclado'
 import '../styles/calculadora.css'
 import '../index.css'
 
 const acciones = {
-  ingresarDigito: action('ingresarDigito'),
-  ingresarOperador: action('ingresarOperador'),
-  ingresarDecimal: action('ingresarDecimal'),
-  cambiarSigno: action('cambiarSigno'),
-  calcular: action('calcular'),
-  limpiar: action('limpiar'),
+  ingresarDigito: (_: string) => {},
+  ingresarOperador: (_: string) => {},
+  ingresarDecimal: () => {},
+  cambiarSigno: () => {},
+  calcular: () => {},
+  limpiar: () => {},
 }
 const estadoBase = {
   pantalla: '0', operando: null, operador: null,
@@ -24,7 +23,7 @@ const meta: Meta<typeof Teclado> = {
     docs: {
       description: {
         component: 'Teclado completo de la calculadora. Cada botón delega al componente ' +
-          'correspondiente según su tipo. Los clicks se registran en el panel Actions.',
+          'correspondiente según su tipo.',
       },
     },
   },

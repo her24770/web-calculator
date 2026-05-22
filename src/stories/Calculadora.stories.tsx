@@ -1,16 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { action } from '@storybook/test'
 import { Calculadora } from '../components/Calculadora'
 import '../styles/calculadora.css'
 import '../index.css'
 
 const acciones = {
-  ingresarDigito: action('ingresarDigito'),
-  ingresarOperador: action('ingresarOperador'),
-  ingresarDecimal: action('ingresarDecimal'),
-  cambiarSigno: action('cambiarSigno'),
-  calcular: action('calcular'),
-  limpiar: action('limpiar'),
+  ingresarDigito: (_: string) => {},
+  ingresarOperador: (_: string) => {},
+  ingresarDecimal: () => {},
+  cambiarSigno: () => {},
+  calcular: () => {},
+  limpiar: () => {},
 }
 const estadoBase = {
   pantalla: '0', operando: null, operador: null,
