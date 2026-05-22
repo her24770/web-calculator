@@ -3,6 +3,7 @@ import { render, fireEvent, screen } from '@testing-library/react'
 import App from '../App'
 
 describe('Calculadora (integración DOM)', () => {
+  // Prueba básica de suma
   it('7 + 3 = muestra 10 en pantalla', () => {
     render(<App />)
     fireEvent.click(screen.getByText('7'))
