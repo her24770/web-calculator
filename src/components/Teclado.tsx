@@ -1,7 +1,6 @@
 import type { AccionesCalc, EstadoCalc, Operador } from '../types'
 import { LAYOUT_BOTONES, OPS_OPERADORES } from '../constants'
 import { BotonNumero, BotonOperador, BotonDecimal, BotonSigno, BotonLimpiar } from './botones'
-
 export function Teclado({ acciones, estado }: { acciones: AccionesCalc; estado: EstadoCalc }) {
   const boton = (v: string) => {
     if (v === '.') return <BotonDecimal key="." onClick={acciones.ingresarDecimal} />
