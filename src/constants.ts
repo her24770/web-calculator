@@ -11,3 +11,5 @@ export const LAYOUT_BOTONES = [
 ] as const
 
 export type ValorBoton = typeof LAYOUT_BOTONES[number][number]
+
+export const OPS_OPERADORES = new Set(['/', '*', '-', '+'])

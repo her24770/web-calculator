@@ -4,8 +4,8 @@ import '../styles/calculadora.css'
 import '../index.css'
 
 const acciones = {
-  ingresarDigito: (_: string) => {},
-  ingresarOperador: (_: string) => {},
+  ingresarDigito: () => {},
+  ingresarOperador: () => {},
   ingresarDecimal: () => {},
   cambiarSigno: () => {},
   calcular: () => {},
